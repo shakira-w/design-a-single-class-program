@@ -4,46 +4,52 @@ Copy this into a `recipe.md` in your project and fill it out.
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
+As a user
+So that I can keep track of my music listening
+I want to add tracks I've listened to and see a list of them.
 
 ## 2. Design the Class Interface
 
-_Include the initializer, public properties, and public methods with all parameters, return values, and side-effects._
+
 
 ```python
-# EXAMPLE
 
-class Reminder:
-    # User-facing properties:
-    #   name: string
+class MusicTracker():
+    def __init__(self):
+        self.playlist = {}
 
-    def __init__(self, name):
-        # Parameters:
-        #   name: string
-        # Side effects:
-        #   Sets the name property of the self object
-        pass # No code here yet
+    def add_music(self, artist, song_name):
+        self.playlist[artist] = song_name
 
-    def remind_me_to(self, task):
-        # Parameters:
-        #   task: string representing a single task
-        # Returns:
-        #   Nothing
-        # Side-effects
-        #   Saves the task to the self object
-        pass # No code here yet
-
-    def remind(self):
-        # Returns:
-        #   A string reminding the user to do the task
-        # Side-effects:
-        #   Throws an exception if no task is set
-        pass # No code here yet
+    def see_playlist(self):
+        for artist, song_name in self.playlist.items():
+            print(f"{artist}: {song_name})
+            return list(self.playlist.items())
 ```
 
 ## 3. Create Examples as Tests
 
-_Make a list of examples of how the class will behave in different situations._
+"""
+initially playlist should return empty {}
+
+"""
+def test_initially_playlist_is_empty():
+    assert self.playlist == {}
+
+"""
+when add_music is called, it stores into the playlist dictionary
+
+"""
+def test_music_is_added_to_playlist_dictionary():
+    artist = "Taylor Swift"
+    song_name = "Blank Space"
+    assert self.playlist = {artist: song_name}
+
+"""
+when function is called it returns list of artists and song names
+
+"""
+
 
 ``` python
 # EXAMPLE
